@@ -1,0 +1,62 @@
+import java.lang.Math;
+import java.util.Scanner;
+public class Random /* extends Main */
+{
+    private int x = 0;
+    
+    public void randomEvent()
+    {
+        x = (int)(Math.random()*15);
+        if(x >= 0 && x <= 5)
+        {
+            System.out.println("A monster appears!");
+        }
+        else if(x >= 6 && x <= 8)
+        {
+            upAttack();
+        }
+        else if(x >= 9 && x <= 11)
+        {
+            upHealth();
+        }
+        else
+        {
+            trap();
+        }
+    }
+    
+    public void upAttack()
+    {
+        System.out.print("You find a strange blue elixar. You think the elixar will have some effect on you. "
+                         + "Will you drink the elixar or leave it? (Drink or Leave)");
+        Scanner scanner = new Scanner(System.in);
+        if(scanner.nextLine().equals("Drink"))
+        {
+            System.out.print("You decide to drink the blue elixar and feel an immensive power surge"
+                             + "within you.");
+            Attack = Attack + 2;
+        }
+        else if(scanner.nextLine().equals("Leave"))
+        {
+            System.out.print("You decide to play it safe and not drink the elixar. Leaving the elixar where it "
+                            + "is, you continue on the dungeon.");
+        }
+        else
+        {
+            
+        }
+    }
+    
+    public void upHealth()
+    {
+        Health = Health + 2;
+        System.out.print("");
+    }
+    
+    public void trap()
+    {
+        Health = Health - 3;
+        System.out.print("");
+    }
+    
+}
